@@ -28,3 +28,48 @@ public class aTest {
 
 
 }
+
+
+
+class Point { int х, у;
+
+    Point(int х, int у) {
+
+        this.x = х;
+
+        this. y = y;
+
+    }
+
+    double distance(int х, int у) {
+
+        int dx = this.x - х;
+
+        int dy = this.у - у;
+
+        return Math.sqrt(dx*dx + dy*dy);
+
+    }
+
+    double distance(Point p) {
+
+        return distance(p.x, p.y);
+
+    } }
+
+class PointDist {
+
+    public static void main(String args[]) {
+
+        Point p1 = new Point(0, 0);
+
+        Point p2 = new Point(30, 40);
+
+        System.out.println("p1 = " + pi.x + ", " + p1.y);
+
+        System.out.println("p2 = " + p2.x + ", " + p2.y);
+
+        System.out.println("p1.distance(p2) = " + p1.distance(p2));
+
+        System.out.println("p1.distance(60, 80) = " + p1.distance(60, 80));
+

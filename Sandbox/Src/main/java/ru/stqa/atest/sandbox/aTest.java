@@ -15,15 +15,15 @@ public class aTest {
         Square s = new Square(5);
         System.out.println("Площадь квадрата со стороной " + s.l + " = " + s.area());
 
-        Rectangle r = new Rectangle(4, 7);
+        Rectangle r = new Rectangle(1, 1);
         System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b + " = " + r.area());
 
-        Point p = new Point( 2, 4);
+        Point p = new Point( 2, 2);
                 System.out.println("Координаты точек = " + p.x + " и " +  p.y);
 
-        Point p1 = new Point(4, 1);
+        Point p1 = new Point(1, 1);
 
-        Point p2 = new Point(30, 40);
+        Point p2 = new Point(2, 2);
 
 
 

@@ -6,6 +6,10 @@ import java.net.SocketPermission;
 
 public class aTest {
 
+<<<<<<< HEAD
+    static public void main(String[] args) {
+        System.out.println("Hello, Wolderолраыв");
+=======
     public static void main(String[] args) {
 
         hello("world");
@@ -42,6 +46,7 @@ public class aTest {
     }
     public static void hello(String somebody) {
     System.out.println("Hellio, " + somebody + "!");
+>>>>>>> bb5dd0913658b88c5816c7598ebe394f8e08ee92
     }
 
     public static double getDistance(int x1, int y1, int x2, int y2)

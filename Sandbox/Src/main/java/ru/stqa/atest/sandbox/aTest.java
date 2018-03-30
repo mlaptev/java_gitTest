@@ -9,7 +9,7 @@ public class aTest {
 
     public static void main(String[] args) {
 
-      
+
         Square s = new Square(5);
         System.out.println("Площадь квадрата со стороной " + s.l + " = " + s.area());
 

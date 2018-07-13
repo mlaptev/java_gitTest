@@ -1,12 +1,13 @@
 package ru.stqa.pft.addressbook.appMContact;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class NavigationHelperContact {
-    private FirefoxDriver wd;
+    private WebDriver wd;
 
-    public NavigationHelperContact(FirefoxDriver wd) {
+    public NavigationHelperContact(WebDriver wd) {
      this.wd = wd;
     }
 

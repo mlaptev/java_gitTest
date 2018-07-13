@@ -2,20 +2,24 @@ package ru.stqa.pft.addressbook.appMContact;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import ru.stqa.pft.addressbook.appmanager.SessionHelper;
+import sun.plugin2.util.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManadgerContact {
-    FirefoxDriver wd;
+    WebDriver wd;
 
     private SessionHelper sessionHelper;
     private NavigationHelperContact navigationHelperContact;
     private ContactHelper contactHelper;
 
-    public static boolean isAlertPresent(FirefoxDriver wd) {
+    public static boolean isAlertPresent(WebDriver wd) {
         try {
             wd.switchTo().alert().accept();
             return true;
@@ -27,7 +31,16 @@ public class ApplicationManadgerContact {
 
 
     public void init() {
-        wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
+        String browser = org.openqa.selenium.remote.BrowserType.FIREFOX;
+        if (browser == org.openqa.selenium.remote.BrowserType.FIREFOX) {
+            wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
+        }
+        else if (browser == org.openqa.selenium.remote.BrowserType.CHROME) {
+            wd = new ChromeDriver();
+        }
+        else if (browser == org.openqa.selenium.remote.BrowserType.IE) {
+            wd = new InternetExplorerDriver();
+        }
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/");
         contactHelper = new ContactHelper(wd);

@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 
 public class ContactCreationTests {
-    FirefoxDriver wd;
+    WebDriver wd;
     
     @BeforeMethod
     public void setUp() throws Exception {

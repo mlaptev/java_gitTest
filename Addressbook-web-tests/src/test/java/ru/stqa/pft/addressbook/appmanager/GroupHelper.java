@@ -3,7 +3,7 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.stqa.pft.addressbook.metod.GroupData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 public class GroupHelper extends HelperBase {
 
@@ -29,12 +29,10 @@ public class GroupHelper extends HelperBase {
         click(By.name("new"));
     }
 
-    public void deleteSelectedGroups(String delete) {
-        click(By.name(delete));
+    public void deleteSelectedGroups() { click(By.name("delete"));
     }
 
-    public void selectGroup(String s) {
-        click(By.name(s));
+    public void selectGroup() { click(By.name("selected"));
     }
 
     public void initGroupModification() {
@@ -43,5 +41,16 @@ public class GroupHelper extends HelperBase {
 
     public void submitGroupModification() {
         click(By.name("update"));
+    }
+
+    public void createGroup(GroupData group) {
+        initGroupCreation();
+        fillGroupForm(group);
+        submitGroupCreation();
+        returnToGroupPage();
+    }
+
+    public boolean isThereAGroup() {
+        return isElementPresent(By.name("selected"));
     }
 }
